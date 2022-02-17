@@ -29,7 +29,7 @@ Load balancing ensures that the application will be highly available, in additio
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A Jump Box with an ansible control node is used to administrate the other machines on the network.  Jump Boxes are useful because you can design network security group rules accordingly and limit the availability of access to the machines' file systems (through SSH) to require credentials which are only stored on the Jump Box.  This puts the credentials to the other machines behind a firewall (network security group) for added security.  Access to the Jump Box is only permitted from select/whitelisted IP Addresses from the internet and thus the other machines on the network do not need to have port 22 exposed to the public internet, but instead only to the JumpBoxProvisioner which is on their local or peer networks.
 
-Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the log files (filebeat) and system metrics (metricbeat).
+Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the log files **(filebeat)** and system metrics **(metricbeat)**.
 
 - **Filebeat**
 
