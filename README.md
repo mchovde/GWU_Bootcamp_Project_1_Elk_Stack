@@ -32,9 +32,11 @@ Load balancing ensures that the application will be highly available, in additio
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the log files (filebeat) and system metrics (metricbeat).
 
 - **Filebeat**
+
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Filebeat is a lightweight shipper for forwarding and centralizing log data. Installed as an agent on your servers, Filebeat monitors the log files or locations that you specify, collects log events, and forwards them either to Elasticsearch or Logstash for indexing.
 
 - **Metricbeat**
+
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Metricbeat takes the metrics and statistics that it collects and ships them to the output that you specify, such as Elasticsearch or Logstash. Metricbeat helps you monitor your servers by collecting metrics from the system and services running on the server, such as: Apache.
 
 The configuration details of each machine may be found below.
