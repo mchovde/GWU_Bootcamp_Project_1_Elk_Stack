@@ -2,7 +2,7 @@
 
 The files in this repository were used to configure the network depicted below.
 
-[Network Diagram](https://gw.bootcampcontent.com/michaelhovde-xxTSya/hovde_gw_bootcamp_project1_elk_stack/-/blob/main/ELK_and_RedTeam_Network_Diagram.jpg)
+!(https://gw.bootcampcontent.com/michaelhovde-xxTSya/hovde_gw_bootcamp_project1_elk_stack/-/blob/main/ELK_and_RedTeam_Network_Diagram.jpg)
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the .yml playbook file may be used to install only certain pieces of it, such as Filebeat.
 
@@ -24,7 +24,7 @@ The main purpose of this network is to expose a load-balanced and monitored inst
 Load balancing ensures that the application will be highly redundant, in addition to restricting access to the network.
 - _TODO: What aspect of security do load balancers protect? What is the advantage of a jump box?_
 
-Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the _____ and system _____.
+Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the logs and system files.
 - _TODO: What does Filebeat watch for?_
 - _TODO: What does Metricbeat record?_
 
