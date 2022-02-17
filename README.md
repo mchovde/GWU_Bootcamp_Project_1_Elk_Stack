@@ -21,13 +21,13 @@ This document contains the following details:
 
 ### Description of the Topology
 
-The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
 
-Load balancing ensures that the application will be highly available, in addition to restricting access to the network.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Load balancing ensures that the application will be highly available, in addition to restricting access to the network.
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Load balancers help maintain the availability of websites because they direct traffic to the webserver with the best health status in the load balancer's backend pool.  This means users should always have access to the contents of the webservers provided at least one of the machines in the backend pool is functional.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Load balancers help maintain the availability of websites because they direct traffic to the webserver with the best health status in the load balancer's backend pool.  This means users should always have access to the contents of the webservers provided at least one of the machines in the backend pool is functional.
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A Jump Box with an ansible control node is used to administrate the other machines on the network.  Jump Boxes are useful because you can design network security group rules accordingly and limit the availability of access to the machines' file systems (through SSH) to require credentials which are only stored on the Jump Box.  This puts the credentials to the other machines behind a firewall (network security group) for added security.  Access to the Jump Box is only permitted from select/whitelisted IP Addresses from the internet and thus the other machines on the network do not need to have port 22 exposed to the public internet, but instead only to the JumpBoxProvisioner which is on their local or peer networks.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A Jump Box with an ansible control node is used to administrate the other machines on the network.  Jump Boxes are useful because you can design network security group rules accordingly and limit the availability of access to the machines' file systems (through SSH) to require credentials which are only stored on the Jump Box.  This puts the credentials to the other machines behind a firewall (network security group) for added security.  Access to the Jump Box is only permitted from select/whitelisted IP Addresses from the internet and thus the other machines on the network do not need to have port 22 exposed to the public internet, but instead only to the JumpBoxProvisioner which is on their local or peer networks.
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the logs and system files.
 - _TODO: What does Filebeat watch for?_
