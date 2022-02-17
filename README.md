@@ -54,14 +54,13 @@ network.
 
 A summary of the access policies in place can be found in the table below.
 
-| Name               | Publicly Accessible | Allowed IP Addresses |
-|--------------------|---------------------|----------------------|
-| JumpBoxProvisioner | YES                 | [my public ip]       |
-| Web-1              | NO                  | 10.0.0.4             |
-| Web-2              | NO                  | 10.0.0.4             |
-| Web-3              | NO                  | 10.0.0.4             |
-| Elk                | NO                  | 10.0.0.4             |
-
+| Name               | Publicly Accessible SSH (Port 22) | Allowed IP Addresses | Publicly Accessible Other Ports | Allowed IP Addresses |
+|--------------------|-----------------------------------|----------------------|---------------------------------|----------------------|
+| JumpBoxProvisioner | YES                               | [my public ip]       | NO                              | N/A                  |
+| Web-1              | NO                                | 10.0.0.4             | YES: 80                         | [my public ip]       |
+| Web-2              | NO                                | 10.0.0.4             | YES: 80                         | [my public ip]       |
+| Web-3              | NO                                | 10.0.0.4             | YES: 80                         | [my public ip]       |
+| Elk                | NO                                | 10.0.0.4             | YES: 5601                       | [my public ip]       |
 ### Elk Configuration
 
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because...
