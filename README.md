@@ -6,7 +6,9 @@ The files in this repository were used to configure the network depicted below.
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the .yml playbook file may be used to install only certain pieces of it, such as Filebeat.
 
-  - _TODO: Enter the playbook file._
+ [Install DVWA Playbook](https://github.com/mchovde/GWU_Bootcamp_Project_1_Elk_Stack/blob/main/Playbooks/Install-DVWA.yml.txt)
+ [Install Elk Playbook](https://github.com/mchovde/GWU_Bootcamp_Project_1_Elk_Stack/blob/main/Playbooks/Install-Elk.yml.txt)
+ [Install Filebeat & Metricbeat Playbook](https://github.com/mchovde/GWU_Bootcamp_Project_1_Elk_Stack/blob/main/Playbooks/Install-Filebeat-and-Metricbeat.yml.txt)
 
 This document contains the following details:
 - Description of the Topology
