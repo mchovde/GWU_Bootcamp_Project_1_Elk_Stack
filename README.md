@@ -29,11 +29,13 @@ Load balancing ensures that the application will be highly available, in additio
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A Jump Box with an ansible control node is used to administrate the other machines on the network.  Jump Boxes are useful because you can design network security group rules accordingly and limit the availability of access to the machines' file systems (through SSH) to require credentials which are only stored on the Jump Box.  This puts the credentials to the other machines behind a firewall (network security group) for added security.  Access to the Jump Box is only permitted from select/whitelisted IP Addresses from the internet and thus the other machines on the network do not need to have port 22 exposed to the public internet, but instead only to the JumpBoxProvisioner which is on their local or peer networks.
 
-Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the logs and system files.
-- _TODO: What does Filebeat watch for?_
-- **Filebeat**
+Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the log files (filebeat) and system metrics (metricbeat).
 
-- _TODO: What does Metricbeat record?_
+- **Filebeat**
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Filebeat is a lightweight shipper for forwarding and centralizing log data. Installed as an agent on your servers, Filebeat monitors the log files or locations that you specify, collects log events, and forwards them either to Elasticsearch or Logstash for indexing.
+
+- **Metricbeat**
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Metricbeat takes the metrics and statistics that it collects and ships them to the output that you specify, such as Elasticsearch or Logstash. Metricbeat helps you monitor your servers by collecting metrics from the system and services running on the server, such as: Apache.
 
 The configuration details of each machine may be found below.
 
