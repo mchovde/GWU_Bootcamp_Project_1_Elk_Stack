@@ -21,9 +21,9 @@ This document contains the following details:
 
 ### Description of the Topology
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
+The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Load balancing ensures that the application will be highly available, in addition to restricting access to the network.
+Load balancing ensures that the application will be highly available, in addition to restricting access to the network.
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Load balancers help maintain the availability of websites because they direct traffic to the webserver with the best health status in the load balancer's backend pool.  This means users should always have access to the contents of the webservers provided at least one of the machines in the backend pool is functional.
 
