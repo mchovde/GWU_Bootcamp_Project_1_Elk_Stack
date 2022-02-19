@@ -114,7 +114,11 @@ SSH into the control node and follow the steps below:
 10.1.0.4 ansible_python_interpreter=/usr/bin/python3
 ```
 NOTE: your Elk-VM's internal IP may be different than in the above example.  Please adjust your hosts file text accordingly.
-- Run the playbook, and navigate to the public IP of the Elk-VM in a web browser.  Be sure to include the port (:5601) and the following text: "/app/kibana".  It should look like this:  http://[Elk-VM-Public-IP]:5601/app/kibana, or in the context of the [network](https://github.com/mchovde/GWU_Bootcamp_Project_1_Elk_Stack/blob/main/diagrams%20and%20images/ELK_and_RedTeam_Network_Diagram.jpg) pictured above: http://20.122.91.6:5601/app/kibana.
+- Run the playbook, 
+```
+ansible-playbook install-elk.yml
+```
+and navigate to the public IP of the Elk-VM in a web browser.  Be sure to include the port (:5601) and the following text: "/app/kibana".  It should look like this:  http://[Elk-VM-Public-IP]:5601/app/kibana, or in the context of the [network](https://github.com/mchovde/GWU_Bootcamp_Project_1_Elk_Stack/blob/main/diagrams%20and%20images/ELK_and_RedTeam_Network_Diagram.jpg) pictured above: http://20.122.91.6:5601/app/kibana.
 
 ### Using the install-filebeat-and-metricbeat.yml Playbook
 
@@ -150,9 +154,7 @@ SSH into the control node and follow the steps below:
 10.0.0.6 ansible_python_interpreter=/usr/bin/python3
 10.0.0.7 ansible_python_interpreter=/usr/bin/python3
 ```
-_TODO: Answer the following questions to fill in the blanks:_
-- _Which file is the playbook? Where do you copy it?_
-- _Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on?_
-- _Which URL do you navigate to in order to check that the ELK server is running?
-
-_As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
+- Run the install-filebeat-and-metricbeat.yml file from the /etc/ansible/roles/ directory with the following command:
+```
+ansible-playbook install-filebeat-and-metricbeat.yml
+```
