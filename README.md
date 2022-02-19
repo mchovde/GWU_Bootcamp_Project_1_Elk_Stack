@@ -108,12 +108,13 @@ In order to use the playbook, you will need to have an Ansible control node alre
 
 SSH into the control node and follow the steps below:
 - Copy the install-elk.yml file to /etc/ansible/*.
-- Update the hosts file (in /etc/ansible/) to include the internal IP address of the elk machine under the header [elk]:
-'''
+- Update the hosts file (in /etc/ansible/) to include the internal IP address of the elk machine under the header [elk].  It should look like this:
+```
 [elk]
 10.1.0.4 ansible_python_interpreter=/usr/bin/python3
-'''
-- Run the playbook, and navigate to ____ to check that the installation worked as expected.
+```
+NOTE: your Elk-VM's internal IP may be different than in the above example.  Please adjust your hosts file text accordingly.
+- Run the playbook, and navigate to the public IP of the Elk-VM in a web browser.  Be sure to include the port (:5601) and the following text: "/app/kibana".  It should look like this:  http://[Elk-VM-Public-IP]:5601/app/kibana, or in the context of the [network](https://github.com/mchovde/GWU_Bootcamp_Project_1_Elk_Stack/blob/main/diagrams%20and%20images/ELK_and_RedTeam_Network_Diagram.jpg) pictured above: http://20.122.91.6:5601/app/kibana.
 
 _TODO: Answer the following questions to fill in the blanks:_
 - _Which file is the playbook? Where do you copy it?_
