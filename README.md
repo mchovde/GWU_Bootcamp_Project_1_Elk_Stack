@@ -82,7 +82,7 @@ The playbook implements the following tasks:
 - Installs docker.io, forces update of docker to the most recent version.
 - Installs python3-pip and forces updated to the most recent version, uses pip to install the Docker module.
 - Increases the virtual memory.  Tells the system to use the additional memory to run the ELK container (requires 3.5gb of RAM to run correctly).
-- Uses the docker_container module to download and launch and elk container.  Identifies and maps the ports required for elk to run, 5601, 9200 and 5044.
+- Uses the docker_container module to download and launch an elk container.  Identifies and maps the ports required for elk to run, 5601, 9200 and 5044.
 - Sets the system to enable the docker service and elk container on boot up so the container is also restarted when the machine is restarted.
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
@@ -101,7 +101,7 @@ We have installed the following Beats on these machines:
 - Web-3: Filebeat & Metricbeat
 
 These Beats allow us to collect the following information from each machine:
-- _TODO: In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. E.g., `Winlogbeat` collects Windows logs, which we use to track user logon events, etc._
+- Filebeat monitors specified log files for changes or events.  Metricbeat monitors the systems for system statistics like CPU usage and memory usage.  When setup properly these beats will display data to their respective Kibana dashboards and will allow easy administration of the Web VMs from both security and performance standpoints.
 
 ### Using the Playbook
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
