@@ -58,12 +58,12 @@ Only the JumpBoxProvisioner machine can accept connections from the Internet. Ac
 
 Machines within the network can only be accessed by SSH.
 
-Elk, Web-1, Web-2 and Web-3 can *only be accessed through the JumpBoxProvisioner machine* with the internal IP
+**Elk, Web-1, Web-2** and **Web-3** can *only be accessed through SSH by the JumpBoxProvisioner machine* with the internal IP
 of **10.0.0.4.**  The SSH credentials for Elk, Web-1, Web-2 and Web-3 are stored in the Ansibile Control Node on the
 JumpBoxProvisioner.  As such, it is the only machine with the credentials to access the other 4 machines on the
 network.
 
-A summary of the access policies in place can be found in the table below.
+A summary of these SSH access policies as well as the machine's exposed ports and accepted IPs can be found in the table below.
 
 | Name               | Publicly Accessible SSH (Port 22) | Allowed IP Addresses | Publicly Accessible Other Ports | Allowed IP Addresses |
 |--------------------|-----------------------------------|----------------------|---------------------------------|----------------------|
