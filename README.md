@@ -107,24 +107,24 @@ These Beats allow us to collect the following information from each machine:
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
 SSH into the control node and follow the steps below:
-- Copy the install-elk.yml file to /etc/ansible/*.
-- Update the hosts file (in /etc/ansible/) to include the internal IP address of the elk machine under the header [elk].  It should look like this:
+- **Copy** the install-elk.yml file to **/etc/ansible/**.
+- **Update** the hosts file (in **/etc/ansible/**) to include the internal IP address of the elk machine under the header [elk].  It should look like this:
 ```
 [elk]
 10.1.0.4 ansible_python_interpreter=/usr/bin/python3
 ```
 NOTE: your Elk-VM's internal IP may be different than in the above example.  Please adjust your hosts file text accordingly.
-- Run the playbook, 
+- **Run** the install-elk.yml playbook, 
 ```
 ansible-playbook install-elk.yml
 ```
-and navigate to the public IP of the Elk-VM in a web browser.  Be sure to include the port (:5601) and the following text: "/app/kibana".  It should look like this:  http://[Elk-VM-Public-IP]:5601/app/kibana, or in the context of the [network](https://github.com/mchovde/GWU_Bootcamp_Project_1_Elk_Stack/blob/main/diagrams%20and%20images/ELK_and_RedTeam_Network_Diagram.jpg) pictured above: http://20.122.91.6:5601/app/kibana.
+and **navigate** to the **public IP** of the Elk-VM in a web browser.  Be sure to include the port (:5601) and the following text: "/app/kibana".  It should look like this:  http://[Elk-VM-Public-IP]:5601/app/kibana, or in the context of the [network](https://github.com/mchovde/GWU_Bootcamp_Project_1_Elk_Stack/blob/main/diagrams%20and%20images/ELK_and_RedTeam_Network_Diagram.jpg) pictured above: http://20.122.91.6:5601/app/kibana.
 
 ### Using the install-filebeat-and-metricbeat.yml Playbook
 
 SSH into the control node and follow the steps below:
-- Copy the [filebeat-config.yml](https://github.com/mchovde/GWU_Bootcamp_Project_1_Elk_Stack/blob/main/ansible/files/filebeat-config.yml) and [metricbeat-config.yml](https://github.com/mchovde/GWU_Bootcamp_Project_1_Elk_Stack/blob/main/ansible/files/metricbeat-config.yml) files to the **/etc/ansible/files/** directory.
-- Edit the filebeat-config.yml and metricbeat-config.yml files to point to the internal IP address of your Elk-VM.
+- **Copy** the [filebeat-config.yml](https://github.com/mchovde/GWU_Bootcamp_Project_1_Elk_Stack/blob/main/ansible/files/filebeat-config.yml) and [metricbeat-config.yml](https://github.com/mchovde/GWU_Bootcamp_Project_1_Elk_Stack/blob/main/ansible/files/metricbeat-config.yml) files to the **/etc/ansible/files/** directory.
+- **Edit/Update** the filebeat-config.yml and metricbeat-config.yml files to point to the internal IP address of your Elk-VM.
 - filebeat-config.yml
 ```
 1105  hosts: ["10.1.0.4:9200"]
@@ -146,15 +146,15 @@ SSH into the control node and follow the steps below:
 98  password: "changeme"
 ```  
 - If you prefer to use non-default credentials for your installation update these files accordingly to ensure the credentials match those of your own installation.
-- Copy the [install-filebeat-and-metricbeat.yml](https://github.com/mchovde/GWU_Bootcamp_Project_1_Elk_Stack/blob/main/ansible/roles/install-filebeat-and-metricbeat.yml.txt) to the **/etc/ansible/roles/** directory.
-- Make sure the hosts file has been updated to include the internal IP of your Web-VMs (should already have been done to install DVWA) under the heading [webservers]:
+- **Copy** the [install-filebeat-and-metricbeat.yml](https://github.com/mchovde/GWU_Bootcamp_Project_1_Elk_Stack/blob/main/ansible/roles/install-filebeat-and-metricbeat.yml.txt) to the **/etc/ansible/roles/** directory.
+- If necessary, **update** the hosts file in **/etc/ansible/** to include the internal IP of your Web-VMs (should already have been done to install DVWA) under the heading [webservers]:
 ```
 [webservers]
 10.0.0.5 ansible_python_interpreter=/usr/bin/python3
 10.0.0.6 ansible_python_interpreter=/usr/bin/python3
 10.0.0.7 ansible_python_interpreter=/usr/bin/python3
 ```
-- Run the install-filebeat-and-metricbeat.yml file from the **/etc/ansible/roles/** directory with the following command:
+- **Run** the install-filebeat-and-metricbeat.yml file from the **/etc/ansible/roles/** directory with the following command:
 ```
 ansible-playbook install-filebeat-and-metricbeat.yml
 ```
