@@ -108,7 +108,7 @@ In order to use the playbook, you will need to have an Ansible control node alre
 
 SSH into the control node and follow the steps below:
 - **Copy** the install-elk.yml file to **/etc/ansible/**.
-- **Update** the hosts file (in **/etc/ansible/**) to include the internal IP address of the elk machine under the header [elk].  It should look like this:
+- **Update** the hosts file (in **/etc/ansible/**) to include the **internal IP** address of the elk machine under the header [elk].  It should look like this:
 ```
 [elk]
 10.1.0.4 ansible_python_interpreter=/usr/bin/python3
@@ -124,7 +124,7 @@ and **navigate** to the **public IP** of the Elk-VM in a web browser.  Be sure t
 
 SSH into the control node and follow the steps below:
 - **Copy** the [filebeat-config.yml](https://github.com/mchovde/GWU_Bootcamp_Project_1_Elk_Stack/blob/main/ansible/files/filebeat-config.yml) and [metricbeat-config.yml](https://github.com/mchovde/GWU_Bootcamp_Project_1_Elk_Stack/blob/main/ansible/files/metricbeat-config.yml) files to the **/etc/ansible/files/** directory.
-- **Edit/Update** the filebeat-config.yml and metricbeat-config.yml files to point to the internal IP address of your Elk-VM.
+- **Edit/Update** the filebeat-config.yml and metricbeat-config.yml files to point to the **internal IP** address of your Elk-VM.
 - filebeat-config.yml
 ```
 1105  hosts: ["10.1.0.4:9200"]
@@ -147,7 +147,7 @@ SSH into the control node and follow the steps below:
 ```  
 - If you prefer to use non-default credentials for your installation update these files accordingly to ensure the credentials match those of your own installation.
 - **Copy** the [install-filebeat-and-metricbeat.yml](https://github.com/mchovde/GWU_Bootcamp_Project_1_Elk_Stack/blob/main/ansible/roles/install-filebeat-and-metricbeat.yml.txt) to the **/etc/ansible/roles/** directory.
-- If necessary, **update** the hosts file in **/etc/ansible/** to include the internal IP of your Web-VMs (should already have been done to install DVWA) under the heading [webservers]:
+- If necessary, **update** the hosts file in **/etc/ansible/** to include the **internal IP** of your Web-VMs (should already have been done to install DVWA) under the heading [webservers]:
 ```
 [webservers]
 10.0.0.5 ansible_python_interpreter=/usr/bin/python3
