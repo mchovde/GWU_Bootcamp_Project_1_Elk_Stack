@@ -154,7 +154,7 @@ SSH into the control node and follow the steps below:
 10.0.0.6 ansible_python_interpreter=/usr/bin/python3
 10.0.0.7 ansible_python_interpreter=/usr/bin/python3
 ```
-- Run the install-filebeat-and-metricbeat.yml file from the /etc/ansible/roles/ directory with the following command:
+- Run the install-filebeat-and-metricbeat.yml file from the **/etc/ansible/roles/** directory with the following command:
 ```
 ansible-playbook install-filebeat-and-metricbeat.yml
 ```
