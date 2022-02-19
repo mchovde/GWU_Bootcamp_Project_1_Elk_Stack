@@ -51,12 +51,12 @@ The configuration details of each machine may be found below.
 
 ### Access Policies
 
-The machines on the internal network are not exposed to the public Internet. 
+4 of the 5 the machines on the internal network are not exposed to the public Internet for SSH connections.
 
 Only the JumpBoxProvisioner machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
 - [my public ip]
 
-Machines within the network can only be accessed by SSH.
+Machines within the network can only be accessed by SSH or through selectively exposed ports that enable their functionality (web-vms through port 80 and the elk-vm through port 5601).
 
 **Elk, Web-1, Web-2** and **Web-3** can *only be accessed through SSH by the JumpBoxProvisioner machine* with the internal IP
 of **10.0.0.4.**  The SSH credentials for Elk, Web-1, Web-2 and Web-3 are stored in the Ansibile Control Node on the
