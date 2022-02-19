@@ -103,7 +103,7 @@ We have installed the following Beats on these machines:
 These Beats allow us to collect the following information from each machine:
 - Filebeat monitors specified log files for changes or events.  Metricbeat monitors the systems for system statistics like CPU usage and memory usage.  When setup properly these beats will display data to their respective Kibana dashboards and will allow easy administration of the Web VMs from both security and performance standpoints.
 
-### Using the Playbook
+### Using the install-elk Playbook
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
 SSH into the control node and follow the steps below:
@@ -116,6 +116,29 @@ SSH into the control node and follow the steps below:
 NOTE: your Elk-VM's internal IP may be different than in the above example.  Please adjust your hosts file text accordingly.
 - Run the playbook, and navigate to the public IP of the Elk-VM in a web browser.  Be sure to include the port (:5601) and the following text: "/app/kibana".  It should look like this:  http://[Elk-VM-Public-IP]:5601/app/kibana, or in the context of the [network](https://github.com/mchovde/GWU_Bootcamp_Project_1_Elk_Stack/blob/main/diagrams%20and%20images/ELK_and_RedTeam_Network_Diagram.jpg) pictured above: http://20.122.91.6:5601/app/kibana.
 
+### Using the install-filebeat-and-metricbeat Playbook
+
+SSH into the control node and follow the steps below:
+- Copy the [filebeat-config.yml](https://github.com/mchovde/GWU_Bootcamp_Project_1_Elk_Stack/blob/main/ansible/files/filebeat-config.yml) and [metricbeat-config.yml](https://github.com/mchovde/GWU_Bootcamp_Project_1_Elk_Stack/blob/main/ansible/files/metricbeat-config.yml) files to the **/etc/ansible/files/** directory.
+- Edit the filebeat-config.yml and metricbeat-config.yml files to point to the internal IP address of your Elk-VM.
+- filebeat-config.yml
+```
+  hosts: ["10.1.0.4:9200"]
+  username: "elastic"
+  password: "changeme"
+```
+```
+setup.kibana:
+  host: "10.1.0.4:5601" # TODO: Change this to the IP address of your ELK server
+```
+- metricbeat-config.yml
+```
+61   setup.kibana:
+62     host: "10.1.0.4:5601"
+```
+- If you prefer to use non-default credentials for your installation update these files accordingly to ensure the credentials match those of your own installation.
+- Copy the [install-filebeat-and-metricbeat.yml](https://github.com/mchovde/GWU_Bootcamp_Project_1_Elk_Stack/blob/main/ansible/roles/install-filebeat-and-metricbeat.yml.txt) to the **/etc/ansible/roles/** directory.
+- Make sure the hosts file has been updated to include the internal IP
 _TODO: Answer the following questions to fill in the blanks:_
 - _Which file is the playbook? Where do you copy it?_
 - _Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on?_
