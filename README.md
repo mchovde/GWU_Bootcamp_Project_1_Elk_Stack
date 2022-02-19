@@ -79,9 +79,11 @@ Ansible's playbooks allow anyone to recreate the ecosystem in a seamless and eff
 technical knowledge required to set up the machines individually.
 
 The playbook implements the following tasks:
-- _TODO: In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
-- ...
-- ...
+- Installs docker.io, forces update of docker to the most recent version.
+- Installs python3-pip and forces updated to the most recent version, uses pip to install the Docker module.
+- Increases the virtual memory.  Tells the system to use the additional memory to run the ELK container (requires 3.5gb of RAM to run correctly).
+- Uses the docker_container module to download and launch and elk container.  Identifies and maps the ports required for elk to run, 5601, 9200 and 5044.
+- Sets the system to enable the docker service and elk container on boot up so the container is also restarted when the machine is restarted.
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
